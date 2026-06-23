@@ -1,0 +1,73 @@
+---
+import Icon from './Icon.astro';
+---
+
+<section class="box skills">
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="strategy" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Data Architecture</h2>
+		<p>Dimensional modeling, data strategy, and enterprise-scale architecture design for banking and financial domains.</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="code" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Solution Design</h2>
+		<p>End-to-end technical solutions — aligning business requirements with scalable, maintainable system architectures.</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="pencil-line" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Technical Strategy</h2>
+		<p>Working directly with stakeholders to turn high-level goals into pragmatic, forward-looking technology roadmaps.</p>
+	</div>
+</section>
+
+<style>
+	.box {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		padding: 1.5rem;
+		background-color: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+		transition:
+			border-color var(--theme-transition),
+			box-shadow var(--theme-transition),
+			transform var(--theme-transition);
+	}
+
+	.box:hover {
+		border-color: var(--accent-regular);
+		box-shadow: var(--shadow-md), 0 0 20px var(--accent-subtle-overlay);
+		transform: translateY(-2px);
+	}
+
+	.skills {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	.skills h2 {
+		font-size: var(--text-lg);
+	}
+
+	.skills p {
+		color: var(--gray-400);
+		line-height: 1.7;
+	}
+
+	@media (min-width: 50em) {
+		.box {
+			border-radius: 1.5rem;
+			padding: 2.5rem;
+		}
+
+		.skills {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 5rem;
+		}
+
+		.skills h2 {
+			font-size: var(--text-2xl);
+		}
+	}
+</style>

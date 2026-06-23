@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page Not Found" description="The page you're looking for doesn't exist or has been moved.">
+	<div class="wrapper stack gap-4">
+		<h1 class="title">Page Not Found</h1>
+		<p class="tagline">The page you're looking for doesn't exist or has been moved.</p>
+		<a class="home-link" href="/">&larr; Back to home</a>
+	</div>
+</BaseLayout>
+
+<style>
+	.title {
+		font-size: var(--text-3xl);
+		color: var(--gray-0);
+		background: var(--gradient-accent-orange);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		text-align: center;
+	}
+
+	.tagline {
+		color: var(--gray-400);
+		font-size: var(--text-base);
+		line-height: 1.6;
+		max-width: 37ch;
+		margin-inline: auto;
+		text-align: center;
+	}
+
+	.wrapper {
+		padding-block: 6rem;
+		align-items: center;
+	}
+
+	.home-link {
+		color: var(--accent-dark);
+		text-decoration: none;
+		font-size: var(--text-lg);
+		transition: color var(--theme-transition);
+	}
+
+	.home-link:hover,
+	.home-link:focus {
+		color: var(--gray-0);
+	}
+
+	@media (min-width: 50em) {
+		.title {
+			font-size: var(--text-5xl);
+		}
+
+		.tagline {
+			font-size: var(--text-lg);
+		}
+
+		.wrapper {
+			padding-block: 10rem;
+		}
+	}
+</style>

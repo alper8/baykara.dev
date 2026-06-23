@@ -1,0 +1,113 @@
+---
+const technologies = [
+	"Python",
+	"Oracle",
+	"Microsoft SQL Server",
+	"TypeScript",
+	"JavaScript",
+	"HTML / CSS",
+	"Git",
+	"Docker",
+	"Linux",
+];
+---
+
+<div class="marquee-wrapper">
+	<div class="marquee">
+		<div class="marquee-track">
+			{
+				technologies.map((tech) => (
+					<span class="marquee-item">{tech}</span>
+				))
+			}
+		</div>
+		<div class="marquee-track" aria-hidden="true">
+			{
+				technologies.map((tech) => (
+					<span class="marquee-item">{tech}</span>
+				))
+			}
+		</div>
+	</div>
+</div>
+
+<style>
+	.marquee-wrapper {
+		width: 100%;
+		overflow: hidden;
+		mask-image: linear-gradient(
+			to right,
+			transparent 0%,
+			black 10%,
+			black 90%,
+			transparent 100%
+		);
+		-webkit-mask-image: linear-gradient(
+			to right,
+			transparent 0%,
+			black 10%,
+			black 90%,
+			transparent 100%
+		);
+	}
+
+	.marquee {
+		display: flex;
+		gap: 1.5rem;
+		width: max-content;
+		animation: marquee-scroll 30s linear infinite;
+	}
+
+	.marquee-track {
+		display: flex;
+		gap: 1.5rem;
+		padding: 0.75rem 0;
+	}
+
+	.marquee-item {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.4rem 1rem;
+		border: 1px solid var(--gray-700);
+		border-radius: 999rem;
+		background-color: var(--gray-999_40);
+		color: var(--gray-300);
+		font-size: var(--text-sm);
+		font-weight: 500;
+		white-space: nowrap;
+		transition:
+			border-color var(--theme-transition),
+			color var(--theme-transition),
+			box-shadow var(--theme-transition);
+	}
+
+	.marquee-item:hover {
+		border-color: var(--accent-regular);
+		color: var(--gray-0);
+		box-shadow: 0 0 16px var(--accent-subtle-overlay);
+	}
+
+	@keyframes marquee-scroll {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(-50%);
+		}
+	}
+
+	@media (min-width: 50em) {
+		.marquee {
+			gap: 2rem;
+		}
+
+		.marquee-track {
+			gap: 2rem;
+		}
+
+		.marquee-item {
+			padding: 0.5rem 1.25rem;
+			font-size: var(--text-base);
+		}
+	}
+</style>
