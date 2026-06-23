@@ -3,8 +3,6 @@ title: "Aviation Data Warehouse Thesis"
 description: "Designed and implemented a complete data warehouse solution for an aviation company as part of B.Sc. Computer Science thesis."
 publishDate: 2025-05-01
 tags: ["Data Warehouse", "Dimensional Modeling", "Python", "SQL"]
-img: "/assets/stock-2.jpg"
-img_alt: "Aviation Company Data Warehouse Project"
 ---
 
 ## Aviation Company Data Warehouse

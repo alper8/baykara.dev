@@ -3,8 +3,6 @@ title: "Intellica Data Models (IFDM & ITDM)"
 description: "Iterative advancement of key internal data frameworks for financial and IT domains, refining dimensional model architectures."
 publishDate: 2025-03-01
 tags: ["Data Modeling", "Python", "AI", "Banking"]
-img: "/assets/stock-3.jpg"
-img_alt: "Intellica Financial and IT Data Models"
 ---
 
 ## Intellica Data Models — IFDM & ITDM
