@@ -277,5 +277,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </style>
 
 <script>
-  document.addEventListener('contextmenu', event => event.preventDefault());
+  // Prevent right-click
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  
+  // Prevent image dragging
+  document.addEventListener('dragstart', e => {
+    if (e.target.tagName === 'IMG') e.preventDefault();
+  });
 </script>
