@@ -1,286 +1,346 @@
 ---
-// Page section components
 import ContactForm from '../components/ContactForm.astro';
 import Hero from '../components/Hero.astro';
-import Icon from '../components/Icon.astro';
-import Marquee from '../components/Marquee.astro';
-import Pill from '../components/Pill.astro';
 import Skills from '../components/Skills.astro';
-// Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout>
-	<div class="stack gap-20 lg:gap-48">
-		<div class="wrapper stack gap-8 lg:gap-20">
-			<header class="hero">
-				<Hero
-					title="Hello, my name is Alper Baykara"
-					tagline="Software Developer & Data Modeler based in Istanbul, Turkey"
-					align="start"
-				>
-					<div class="roles">
-						<Pill><Icon icon="strategy" size="1.33em" /> System Architecture</Pill>
-						<Pill><Icon icon="code" size="1.33em" /> Solution Design</Pill>
-						<Pill><Icon icon="pencil-line" size="1.33em" /> Data Strategy</Pill>
-					</div>
-				</Hero>
 
-				<img
-					alt="Alper Baykara"
-					width="480"
-					height="620"
-					src="/assets/portrait.png"
-				/>
-			</header>
+  <section class="hero">
+    <Hero />
+  </section>
 
-			<Marquee />
+  <Skills />
 
-			<Skills />
-		</div>
+  <!-- SUMMARY -->
+  <section id="summary">
+    <div class="section-label reveal">About</div>
+    <h2 class="section-title reveal reveal-delay-1">Summary</h2>
+    <div class="reveal reveal-delay-2 summary-grid">
+      <p>
+        I'm a Software Developer who thrives on solving complex problems at the intersection of business and technology. Over the last 2 years as a Data Modeler at <strong>Intellica</strong>, I've focused on dimensional modeling and end-to-end project execution, ensuring data quality and accuracy across banking, aviation, and IT domains.
+      </p>
+      <p>
+        I believe in collaborative design and work directly with stakeholders to turn high-level strategy into scalable solutions. My background in Computer Science, combined with hands-on experience across financial and aviation data modeling, gives me a unique perspective on building systems that are both technically sound and business-aligned.
+      </p>
+    </div>
+  </section>
 
-		<main class="wrapper about">
-			<section>
-				<h2 class="section-title">Summary</h2>
-				<div class="content">
-					<p>
-						I'm a Software Developer who thrives on solving complex problems at the intersection of business and technology. Over the last 2 years at Intellica, I've focused on dimensional modeling, data strategy, and end-to-end architecture — ensuring technical solutions align with business goals.
-					</p>
-					<p>
-						I work directly with stakeholders to turn high-level strategy into scalable, well-architected solutions. My experience spans banking, IT, and financial data domains — designing systems that are both pragmatic and forward-looking.
-					</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Experience</h2>
-				<div class="content">
-					<h3>Intellica — Associate BI Consultant / Data Modeler</h3>
-					<p><em>Aug 2024 – Jul 2026 · Istanbul, Turkey</em></p>
-					<p>Started at Intellica's 2024 summer data training camp, hired part-time during university, then converted to full-time. Contributed to iterative advancement of key internal data frameworks including Intellica Financial (IFDM) and IT (ITDM) Data Models. Served as Data Modeler on Corporate Bank DWH Project (Reference available on request), driving data architecture decisions, ensuring data quality, and aligning deliverables with established modeling standards.</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Education</h2>
-				<div class="content">
-					<h3>University of Pécs</h3>
-					<p><em>Sep 2022 – Jul 2025 · Pécs, Hungary</em></p>
-					<p>B.Sc. Computer Science — Software Developer track. Wrote thesis on creating an aviation company data warehouse. Completed relevant coursework in Data Science, Introduction to Artificial Intelligence, and Advanced Python.</p>
-					<h3>ISTEK Schools</h3>
-					<p><em>Sep 2020 – Jun 2022 · Istanbul, Turkey</em></p>
-					<p>International Baccalaureate Diploma Programme with Higher Level Business Management and English.</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Skills & Languages</h2>
-				<div class="content">
-					<p><strong>Technical:</strong> Data Architecture, Solution Design, Dimensional Modeling, Python, Oracle, Microsoft SQL Server, PowerDesigner, Financial Data Modeling</p>
-					<p><strong>Languages:</strong> English (Professional Working Proficiency), Turkish (Native Proficiency)</p>
-				</div>
-			</section>
-		</main>
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-label reveal">Experience</div>
+    <h2 class="section-title reveal reveal-delay-1">Career</h2>
+    <p class="section-sub reveal reveal-delay-2">My professional journey so far.</p>
+    <div class="timeline reveal reveal-delay-3">
+      <div class="timeline-item">
+        <div class="date">Aug 2024 — Jul 2026</div>
+        <h3>Associate BI Consultant / Data Modeler</h3>
+        <div class="org">Intellica — Istanbul, Turkey</div>
+        <p>Started at Intellica's 2024 summer data training camp, transitioned from part-time during university to full-time. Contributed to the iterative advancement of key internal data frameworks including IFDM (Financial) and ITDM (IT) Data Models. Worked on the Corporate Bank DWH Modernization Project, driving data quality and ensuring alignment with architectural standards.</p>
+        <div class="tech-tags">
+          <span>Python</span>
+          <span>Oracle</span>
+          <span>SQL Server</span>
+          <span>PowerDesigner</span>
+          <span>AI</span>
+          <span>Banking</span>
+        </div>
+      </div>
+    </div>
 
-		<ContactForm />
-	</div>
+    <!-- Hidden Game Dev Section -->
+    <div class="side-projects reveal">
+      <div class="badge">&#127918; Side Quests</div>
+      <h3>Creative Engineering</h3>
+      <p>Beyond the data layer, I explore game development — building interactive experiences with Unity, C#, and a passion for crafting things people enjoy.</p>
+
+      <div class="side-project-card">
+        <div class="thumb">&#127922;</div>
+        <div class="info">
+          <h4>
+            itch.io indie game project
+            <span class="private-note" onclick="this.classList.toggle('active')">
+              !
+              <span class="tooltip-text">Game dev identity kept private for professional focus; details available upon request.</span>
+            </span>
+          </h4>
+          <p>Built and published a PC game seen by 10M+ audience. Full development cycle from concept to shipping.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section>
+    <div class="section-label reveal">Education</div>
+    <h2 class="section-title reveal reveal-delay-1">Background</h2>
+    <p class="section-sub reveal reveal-delay-2">Academic foundation that shaped my technical perspective.</p>
+    <div class="timeline reveal reveal-delay-3">
+      <div class="timeline-item">
+        <div class="date">Sep 2022 — Jul 2025</div>
+        <h3>B.Sc. Computer Science</h3>
+        <div class="org">University of Pécs — Pécs, Hungary</div>
+        <p>Software Developer track. Thesis on creating an aviation company data warehouse. Courses in Data Science, Introduction to AI, and Advanced Python.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="date">Sep 2020 — Jun 2022</div>
+        <h3>International Baccalaureate Diploma</h3>
+        <div class="org">ISTEK Schools — Istanbul, Turkey</div>
+        <p>Higher Level Business Management and English. Foundation in analytical thinking and global perspectives.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-label reveal">Skills</div>
+    <h2 class="section-title reveal reveal-delay-1">Toolkit & Languages</h2>
+    <p class="section-sub reveal reveal-delay-2">Technologies I work with and the languages I speak.</p>
+    <div class="skills-grid reveal reveal-delay-3">
+      <div class="skill-group">
+        <h3>Core Expertise</h3>
+        <div class="skill-cluster">
+          <span class="skill-chip prod">Data Architecture</span>
+          <span class="skill-chip prod">Dimensional Modeling</span>
+          <span class="skill-chip prod">Solution Design</span>
+          <span class="skill-chip prod">Technical Strategy</span>
+          <span class="skill-chip prod">Financial & Aviation Data Modeling</span>
+          <span class="skill-chip freq">Python</span>
+          <span class="skill-chip freq">Oracle</span>
+          <span class="skill-chip freq">SQL Server</span>
+          <span class="skill-chip freq">PowerDesigner</span>
+          <span class="skill-chip freq">JavaScript / TypeScript</span>
+          <span class="skill-chip exp">AI / ML</span>
+          <span class="skill-chip exp">Software Architecture</span>
+          <span class="skill-chip exp">ETL / Data Warehousing</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Languages</h3>
+        <div class="skill-cluster" style="margin-bottom:24px;">
+          <span class="skill-chip prod">English — Professional</span>
+          <span class="skill-chip prod">Turkish — Native</span>
+        </div>
+        <h3 style="margin-top:24px;">Also Familiar With</h3>
+        <div class="skill-cluster">
+          <span class="skill-chip">Docker</span>
+          <span class="skill-chip">Git</span>
+          <span class="skill-chip">Linux</span>
+          <span class="skill-chip">Excel</span>
+          <span class="skill-chip">HTML / CSS</span>
+          <span class="skill-chip">Unity</span>
+          <span class="skill-chip">C#</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <div class="section-label reveal">Contact</div>
+    <h2 class="section-title reveal reveal-delay-1">Get in Touch</h2>
+    <p class="section-sub reveal reveal-delay-2" style="margin-bottom:32px;">Have a question or want to work together? Drop me a message.</p>
+    <ContactForm />
+  </section>
+
 </BaseLayout>
 
 <style>
-	.hero {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 2rem;
-	}
+  .hero {
+    position: relative; z-index: 1;
+    min-height: 100vh; display: flex; align-items: center;
+    padding: 120px 32px 80px;
+    max-width: 1200px; margin: 0 auto;
+  }
 
-	.roles {
-		display: none;
-	}
+  .section-label {
+    font-family: var(--mono); font-size: 12px;
+    color: var(--accent); letter-spacing: 2px; text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-size: 28px; font-weight: 700; margin-bottom: 12px;
+  }
+  .section-sub {
+    color: var(--text2); font-size: 15px; max-width: 600px;
+    margin-bottom: 48px;
+  }
 
-	.hero img {
-		aspect-ratio: 5 / 4;
-		object-fit: cover;
-		object-position: top;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
-		transition: box-shadow var(--theme-transition), transform var(--theme-transition);
-	}
+  section {
+    position: relative; z-index: 1;
+    max-width: 1000px; margin: 0 auto;
+    padding: 100px 32px;
+  }
 
-	.hero img:hover {
-		box-shadow: var(--shadow-lg);
-		transform: scale(1.01);
-	}
+  .summary-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+  }
+  .summary-grid p {
+    font-size: 14px; color: var(--text2); line-height: 1.8;
+  }
+  .summary-grid strong { color: var(--text); }
 
-	@media (min-width: 50em) {
-		.hero {
-			display: grid;
-			grid-template-columns: 6fr 4fr;
-			padding-inline: 2.5rem;
-			gap: 3.75rem;
-		}
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before {
+    content: ''; position: absolute; left: 7px; top: 8px; bottom: 8px;
+    width: 2px; background: var(--border);
+  }
+  .timeline-item {
+    position: relative; margin-bottom: 40px; padding-left: 28px;
+  }
+  .timeline-item:last-child { margin-bottom: 0; }
+  .timeline-item::before {
+    content: ''; position: absolute;
+    left: -21px; top: 6px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--surface); border: 2px solid var(--accent);
+  }
+  .timeline-item .date {
+    font-family: var(--mono); font-size: 12px;
+    color: var(--accent); margin-bottom: 4px;
+  }
+  .timeline-item h3 { font-size: 16px; font-weight: 600; }
+  .timeline-item .org {
+    font-size: 13px; color: var(--accent2); margin-bottom: 8px;
+  }
+  .timeline-item p { font-size: 13px; color: var(--text2); line-height: 1.6; }
+  .timeline-item .tech-tags {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px;
+  }
+  .timeline-item .tech-tags span {
+    padding: 2px 10px; border-radius: 6px;
+    font-size: 11px; font-family: var(--mono);
+    background: var(--surface2); color: var(--text2);
+    border: 1px solid var(--border);
+  }
 
-		.roles {
-			margin-top: 0.5rem;
-			display: flex;
-			gap: 0.5rem;
-		}
+  .side-projects {
+    background: linear-gradient(135deg, rgba(167,139,250,0.05), rgba(96,165,250,0.05));
+    border: 1px solid rgba(167,139,250,0.15);
+    border-radius: var(--radius-lg);
+    padding: 40px; margin-top: 48px;
+  }
+  .side-projects .badge {
+    display: inline-block;
+    padding: 3px 10px; border-radius: 6px;
+    font-size: 11px; font-weight: 600;
+    background: rgba(167,139,250,0.15); color: var(--accent2);
+    margin-bottom: 12px;
+  }
+  .side-projects h3 {
+    font-size: 18px; font-weight: 600; margin-bottom: 8px;
+    color: var(--accent2);
+  }
+  .side-projects p { font-size: 13px; color: var(--text2); max-width: 600px; }
 
-		.hero img {
-			aspect-ratio: 3 / 4;
-			border-radius: 4.5rem;
-			object-fit: cover;
-		}
-	}
+  .side-project-card {
+    display: flex; gap: 20px; align-items: center;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 20px;
+    margin-top: 16px;
+    transition: all 0.2s;
+  }
+  .side-project-card:hover {
+    border-color: rgba(167,139,250,0.3);
+    transform: translateX(4px);
+  }
+  .side-project-card .thumb {
+    width: 56px; height: 56px; border-radius: 10px;
+    background: var(--surface2); display: flex;
+    align-items: center; justify-content: center;
+    font-size: 24px; flex-shrink: 0;
+  }
+  .side-project-card .info h4 {
+    font-size: 14px; font-weight: 600;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .side-project-card .info p { font-size: 12px; color: var(--text2); margin-top: 2px; }
 
-	/* About section styles */
+  .private-note {
+    position: relative;
+    font-size: 10px;
+    width: 16px; height: 16px;
+    border: 1px solid var(--accent2);
+    color: var(--accent2);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: rgba(167,139,250,0.1);
+    font-weight: bold;
+  }
+  .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 8px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    font-size: 11px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .private-note.active .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
 
-	.about {
-		display: flex;
-		flex-direction: column;
-		gap: 2.5rem;
-	}
+  .skills-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+  }
+  .skill-group h3 {
+    font-size: 13px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 1px; color: var(--text2);
+    margin-bottom: 16px;
+  }
+  .skill-cluster { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill-chip {
+    padding: 6px 14px; border-radius: 8px;
+    font-size: 13px; font-weight: 500;
+    background: var(--surface2); color: var(--text);
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+  }
+  .skill-chip:hover {
+    border-color: var(--accent); color: var(--accent);
+    transform: translateY(-1px);
+  }
+  .skill-chip.prod { border-color: rgba(96,165,250,0.3); }
+  .skill-chip.freq { border-color: rgba(167,139,250,0.3); }
+  .skill-chip.exp { border-color: rgba(52,211,153,0.3); }
 
-	section {
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-		color: var(--gray-200);
-		padding: 1.75rem;
-		border: 1px solid var(--gray-800);
-		border-radius: 1rem;
-		background-color: var(--gray-999_40);
-		box-shadow: var(--shadow-sm);
-		transition:
-			border-color var(--theme-transition),
-			box-shadow var(--theme-transition),
-			transform var(--theme-transition);
-	}
+  .contact-section {
+    padding-bottom: 40px;
+  }
 
-	section:hover {
-		border-color: var(--gray-600);
-		box-shadow: var(--shadow-md);
-		transform: translateY(-1px);
-	}
+  .reveal {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22,1,0.36,1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
 
-	.section-title {
-		font-size: var(--text-lg);
-		font-weight: 600;
-		color: var(--gray-0);
-		position: relative;
-		padding-bottom: 0.5rem;
-	}
-
-	.section-title::after {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 2rem;
-		height: 2px;
-		background: var(--gradient-accent-orange);
-		border-radius: 1px;
-	}
-
-	.content {
-		display: flex;
-		flex-direction: column;
-		gap: 0.75rem;
-		grid-column: 2 / 4;
-	}
-
-	.content h3 {
-		font-size: var(--text-base);
-		font-weight: 600;
-		color: var(--gray-0);
-		margin-top: 0.25rem;
-	}
-
-	.content h3 + p {
-		margin-top: -0.25rem;
-	}
-
-	.content em {
-		font-style: normal;
-		font-size: var(--text-sm);
-		color: var(--gray-400);
-		letter-spacing: 0.02em;
-	}
-
-	.content strong {
-		color: var(--gray-100);
-		font-weight: 600;
-	}
-
-	.content p {
-		line-height: 1.7;
-		color: var(--gray-300);
-	}
-
-	.content :global(a) {
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
-
-	.content :global(a:hover),
-	.content :global(a:focus) {
-		text-decoration-color: currentColor;
-	}
-
-	@media (min-width: 50em) {
-		.about {
-			display: grid;
-			grid-template-columns: 1fr 60% 1fr;
-			gap: 3.5rem;
-		}
-
-		section {
-			display: contents;
-			font-size: var(--text-lg);
-			padding: 0;
-			border: none;
-			border-radius: 0;
-			background: none;
-			box-shadow: none;
-		}
-
-		section:hover {
-			border-color: transparent;
-			box-shadow: none;
-			transform: none;
-		}
-
-		.section-title {
-			font-size: var(--text-xl);
-			padding-bottom: 0;
-		}
-
-		.section-title::after {
-			display: none;
-		}
-
-		.content {
-			display: block;
-			gap: initial;
-		}
-
-		.content p {
-			margin-bottom: 0.75rem;
-		}
-
-		.content h3 {
-			font-size: var(--text-lg);
-		}
-
-		.content em {
-			font-size: var(--text-base);
-		}
-	}
+  @media (max-width: 768px) {
+    .hero { padding: 100px 20px 60px; min-height: auto; }
+    section { padding: 60px 20px; }
+    .summary-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .side-project-card { flex-direction: column; text-align: center; }
+  }
 </style>
 
 <script>
-  // Prevent right-click
   document.addEventListener('contextmenu', e => e.preventDefault());
-  
-  // Prevent image dragging
   document.addEventListener('dragstart', e => {
     if (e.target.tagName === 'IMG') e.preventDefault();
   });
