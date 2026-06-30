@@ -15,6 +15,7 @@ const { title, description } = Astro.props;
   <head>
     <MainHead title={title} description={description} />
     <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content={description ?? "Alper Baykara — software developer and data modeler specializing in data architecture, dimensional modeling, and full-stack solutions."} />
   </head>
   <body>
     <canvas id="bg-canvas"></canvas>
@@ -59,7 +60,7 @@ const { title, description } = Astro.props;
         }
       }
 
-      const nodes = Array.from({ length: 60 }, () => new Node());
+      const nodes = Array.from({ length: 50 }, () => new Node());
 
       function drawLines() {
         for (let i = 0; i < nodes.length; i++) {
