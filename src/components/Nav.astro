@@ -29,8 +29,9 @@
     font-weight: 700; font-size: 18px;
     background: var(--gradient); -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-decoration: none;
+    text-decoration: none; transition: opacity 0.2s;
   }
+  nav .logo:hover { opacity: 0.8; }
   nav .logo span { font-family: var(--mono); font-weight: 400; -webkit-text-fill-color: #8b92a5; }
   nav .links { display: flex; gap: 24px; align-items: center; }
   nav .links a {
