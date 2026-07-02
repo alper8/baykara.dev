@@ -1,80 +1,133 @@
----
-interface Props {
-	title: string;
-	tagline?: string;
-	align?: 'start' | 'center';
-}
-
-const { align = 'center', tagline, title } = Astro.props;
----
-
-<div class:list={['hero stack gap-4', align]}>
-	<div class="stack gap-2">
-		<h1 class="title">{title}</h1>
-		{tagline && <p class="tagline">{tagline}</p>}
-	</div>
-	<slot />
+<div class="hero-grid">
+  <div class="hero-content">
+    <div class="hero-badge">📍 Based in Istanbul, Turkey</div>
+    <h1>
+      <span class="highlight">Hi, I'm</span><br>
+      <span class="gradient-text">Alper Baykara</span>
+    </h1>
+    <p>Software Developer & Data Modeler. I build data architectures and technical strategies at the intersection of business and technology — turning complex problems into scalable solutions.</p>
+    <div class="hero-tags">
+      <span class="tag">System Architecture</span>
+      <span class="tag">Solution Design</span>
+      <span class="tag">Data Engineering</span>
+      <span class="tag">Python</span>
+      <span class="tag">AI/ML</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Get in Touch
+      </a>
+      <a href="#experience" class="btn btn-outline">View Experience</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-photo-wrapper">
+      <img src="/assets/portrait.png" alt="Alper Baykara" />
+    </div>
+  </div>
 </div>
 
 <style>
-	.hero {
-		font-size: var(--text-lg);
-		text-align: center;
-		animation: heroFadeIn 0.6s ease-out;
-	}
+  .hero-grid {
+    display: grid; grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px; align-items: center; width: 100%;
+  }
+  .hero-content { position: relative; }
+  .hero-badge {
+    display: inline-block;
+    padding: 4px 14px; border-radius: 100px;
+    font-size: 12px; font-weight: 500; letter-spacing: 0.3px;
+    background: rgba(96,165,250,0.1); color: var(--accent);
+    border: 1px solid rgba(96,165,250,0.2);
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 800; line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  h1 .gradient-text {
+    background: var(--gradient); -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  h1 .highlight { color: var(--text); }
+  .hero-content p {
+    font-size: 16px; color: var(--text2);
+    max-width: 520px; margin-bottom: 32px;
+  }
+  .hero-tags {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px;
+  }
+  .hero-tags .tag {
+    padding: 6px 14px; border-radius: 8px;
+    font-size: 12px; font-weight: 500;
+    background: var(--surface2); color: var(--text2);
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+  }
+  .hero-tags .tag:hover {
+    border-color: var(--accent); color: var(--accent);
+    transform: translateY(-1px);
+  }
+  .hero-actions {
+    display: flex; gap: 12px; flex-wrap: wrap;
+  }
+  .hero-actions .btn {
+    padding: 12px 28px; border-radius: 10px;
+    font-size: 14px; font-weight: 600; text-decoration: none;
+    transition: all 0.25s; display: inline-flex; align-items: center; gap: 8px;
+  }
+  .hero-actions .btn-primary {
+    background: var(--gradient); color: #fff;
+    box-shadow: 0 4px 20px rgba(96,165,250,0.25);
+  }
+  .hero-actions .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(96,165,250,0.35);
+  }
+  .hero-actions .btn-outline {
+    background: transparent; color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .hero-actions .btn-outline:hover {
+    border-color: var(--accent); color: var(--accent);
+    transform: translateY(-2px);
+  }
 
-	.title,
-	.tagline {
-		max-width: 37ch;
-		margin-inline: auto;
-	}
+  .hero-visual {
+    display: flex; justify-content: center; align-items: center;
+    position: relative;
+  }
+  .hero-photo-wrapper {
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-photo-wrapper::before {
+    content: ''; position: absolute; inset: -3px;
+    border-radius: 50%;
+    background: var(--gradient);
+    animation: spin 4s linear infinite;
+    z-index: 0;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .hero-photo-wrapper img {
+    position: relative; z-index: 1;
+    width: 100%; height: 100%; object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--bg);
+  }
 
-	.title {
-		font-size: var(--text-3xl);
-		color: var(--gray-0);
-		background: var(--gradient-accent-orange);
-		-webkit-background-clip: text;
-		background-clip: text;
-		-webkit-text-fill-color: transparent;
-	}
-
-	.tagline {
-		color: var(--gray-400);
-		font-size: var(--text-base);
-		line-height: 1.6;
-	}
-
-	@keyframes heroFadeIn {
-		from {
-			opacity: 0;
-			transform: translateY(12px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
-
-	@media (min-width: 50em) {
-		.hero {
-			font-size: var(--text-xl);
-		}
-
-		.start {
-			text-align: start;
-		}
-
-		.start .title,
-		.start .tagline {
-			margin-inline: unset;
-		}
-
-		.title {
-			font-size: var(--text-5xl);
-		}
-
-		.tagline {
-			font-size: var(--text-lg);
-		}
-	}
+  @media (max-width: 768px) {
+    .hero-grid {
+      grid-template-columns: 1fr; gap: 40px;
+      text-align: center;
+    }
+    .hero-content p { margin: 0 auto 32px; }
+    .hero-tags { justify-content: center; }
+    .hero-actions { justify-content: center; }
+    .hero-photo-wrapper { width: 220px; height: 220px; }
+  }
 </style>

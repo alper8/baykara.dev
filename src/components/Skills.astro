@@ -1,73 +1,75 @@
----
-import Icon from './Icon.astro';
----
-
-<section class="box skills">
-	<div class="stack gap-2 lg:gap-4">
-		<Icon icon="strategy" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Data Architecture</h2>
-		<p>Dimensional modeling, data strategy, and enterprise-scale architecture design for banking and financial domains.</p>
-	</div>
-	<div class="stack gap-2 lg:gap-4">
-		<Icon icon="code" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Solution Design</h2>
-		<p>End-to-end technical solutions — aligning business requirements with scalable, maintainable system architectures.</p>
-	</div>
-	<div class="stack gap-2 lg:gap-4">
-		<Icon icon="pencil-line" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Technical Strategy</h2>
-		<p>Working directly with stakeholders to turn high-level goals into pragmatic, forward-looking technology roadmaps.</p>
-	</div>
+<section>
+  <div class="section-label reveal">Focus Areas</div>
+  <h2 class="section-title reveal reveal-delay-1">What I Do</h2>
+  <p class="section-sub reveal reveal-delay-2">Three pillars that define my approach to software and data.</p>
+  <div class="cards-grid">
+    <div class="expertise-card reveal reveal-delay-1">
+      <div class="icon">🧩</div>
+      <h3>Data Architecture</h3>
+      <p>Dimensional modeling, data strategy, and enterprise-scale architecture design for banking, IT, HR, aviation — to name a few.</p>
+    </div>
+    <div class="expertise-card reveal reveal-delay-2">
+      <div class="icon">&lt;/&gt;</div>
+      <h3>Solution Design</h3>
+      <p>End-to-end technical solutions — aligning business requirements with scalable, maintainable system architectures.</p>
+    </div>
+    <div class="expertise-card reveal reveal-delay-3">
+      <div class="icon">📝</div>
+      <h3>Technical Strategy</h3>
+      <p>Working directly with stakeholders to turn high-level goals into pragmatic, forward-looking technology roadmaps.</p>
+    </div>
+  </div>
 </section>
 
 <style>
-	.box {
-		border: 1px solid var(--gray-800);
-		border-radius: 0.75rem;
-		padding: 1.5rem;
-		background-color: var(--gray-999_40);
-		box-shadow: var(--shadow-sm);
-		transition:
-			border-color var(--theme-transition),
-			box-shadow var(--theme-transition),
-			transform var(--theme-transition);
-	}
+  section {
+    position: relative; z-index: 1;
+    max-width: 1000px; margin: 0 auto;
+    padding: 100px 32px;
+  }
+  .section-label {
+    font-family: var(--mono); font-size: 12px;
+    color: var(--accent); letter-spacing: 2px; text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-size: 28px; font-weight: 700; margin-bottom: 12px;
+  }
+  .section-sub {
+    color: var(--text2); font-size: 15px; max-width: 600px;
+    margin-bottom: 48px;
+  }
+  .cards-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  }
+  .expertise-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px; transition: all 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .expertise-card::after {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gradient);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .expertise-card:hover::after { opacity: 1; }
+  .expertise-card:hover {
+    border-color: rgba(96,165,250,0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  }
+  .expertise-card .icon {
+    font-size: 28px; margin-bottom: 16px;
+    width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;
+    background: var(--surface2); border-radius: 10px;
+  }
+  .expertise-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+  .expertise-card p { font-size: 13px; color: var(--text2); line-height: 1.6; }
 
-	.box:hover {
-		border-color: var(--accent-regular);
-		box-shadow: var(--shadow-md), 0 0 20px var(--accent-subtle-overlay);
-		transform: translateY(-2px);
-	}
-
-	.skills {
-		display: flex;
-		flex-direction: column;
-		gap: 3rem;
-	}
-
-	.skills h2 {
-		font-size: var(--text-lg);
-	}
-
-	.skills p {
-		color: var(--gray-400);
-		line-height: 1.7;
-	}
-
-	@media (min-width: 50em) {
-		.box {
-			border-radius: 1.5rem;
-			padding: 2.5rem;
-		}
-
-		.skills {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 5rem;
-		}
-
-		.skills h2 {
-			font-size: var(--text-2xl);
-		}
-	}
+  @media (max-width: 768px) {
+    .cards-grid { grid-template-columns: 1fr; }
+    section { padding: 60px 20px; }
+  }
 </style>
